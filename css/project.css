@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css?family=Kodchasan');
+
+/*************************************************
+            DEFAULTS
+*************************************************/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+:root {
+    --c: 8deg;
+}
+
+html {
+    font-size: 16px;
+    font-family: Kodchasan, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+}
+
+
+/*************************************************
+            HEADER
+*************************************************/
+header {
+    padding: 1rem 2rem;
+    color: black;
+    border-top: 1rem solid hsl(var(--c), 100%, 70%);
+    ;
+    background-image: url(../img/1.jpg);
+    background-size: cover;
+    background-position: bottom;
+    height: 300px;
+}
+
+header > h1 {
+    padding: 2rem 0rem 0rem 1rem;
+    font-size: 3rem;
+    color: hsl(var(--c), 100%, 100%);
+    text-shadow: 2px 2px hsl(var(--c), 0%, 20%);
+}
+
+header > h2 {
+    padding: 1rem;
+    font-size: 2rem;
+    color: hsl(var(--c), 0%, 20%);
+    text-shadow: 1px 1px hsl(var(--c), 100%, 100%);
+
+}
+
+/*************************************************
+            NAVMENU
+*************************************************/
+nav {}
+
+.mainnav {
+    display: flex;
+    justify-content: space-between;
+    background-color: hsl(var(--c), 0%, 95%);
+    padding: 1rem 2.5rem;
+}
+
+nav > a,
+nav > a:visited,
+nav > a:link {
+    text-decoration: none;
+    color: hsl(var(--c), 0%, 50%);
+}
+
+nav > a:active,
+nav > a:focus,
+nav > a:hover {
+    text-decoration: underline;
+    color: hsl(var(--c), 80%, 50%);
+}
+
+/*************************************************
+            MAIN CONTENT
+*************************************************/
+main {
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "a a"
+        "b c";
+    border-bottom: 1rem solid hsl(var(--c), 100%, 70%);
+}
+
+section {
+    text-align: justify;
+}
+
+section h2 {
+    padding: 0.55rem;
+    font-size: 1.8rem;
+    color: hsl(var(--c), 100%, 70%);
+}
+
+section p {
+    padding: 0.55rem;
+}
+
+.first {
+    grid-area: a;
+}
+
+.first img {
+    float: left;
+    width: 50%;
+    margin: 0rem 1rem 1rem 0rem;
+}
+
+.first h1 {
+    font-size: 2.5rem;
+    color: hsl(var(--c), 100%, 70%);
+    padding: 0.55rem;
+}
+
+.second {
+    grid-area: b;
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+
+}
+
+.third img,
+.second img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.third {
+    grid-area: c;
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+}
+
+
+/*************************************************
+            FOOTER
+*************************************************/
+footer {
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: hsl(var(--c), 0%, 95%);
+}
+
+.form-box:nth-child(1) {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    height: 24px
+}
+
+#name,
+#email {
+    width: 49%;
+}
+
+#comment {
+    width: 100%;
+    height: 200px;
+    margin: 1rem 0rem;
+}
+
+#city {
+    width: 100%;
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.subnav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 3rem;
+
+}
+
+.foot dl {
+    width: 40%;
+    margin-bottom: 2rem;
+}
+
+.foot dt {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+dd {
+    color: aqua;
+}
+
+.foot dd a {
+    text-decoration: none;
+    color: hsl(var(--c), 0%, 50%);
+}
+
+.foot dd a:visited {}
+
+.foot dd a:active,
+.foot dd a:focus,
+.foot dd a:hover {
+    color: hsl(var(--c), 100%, 70%);
+    text-decoration: underline;
+}
+
+
+/*************************************************
+            MEDIA QUERIES for layout
+*************************************************/
+@media (max-width: 599px) {
+    :root {
+        --c: 220deg;
+    }
+
+    header {
+        background-image: url(../img/max599px/1.jpg);
+
+    }
+
+    header > h1 {
+        font-size: 2.5rem;
+    }
+
+    header > h2 {
+        font-size: 1.5rem;
+    }
+
+    .mainnav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .mainnav a {
+        border-bottom: 1px solid hsl(var(--c), 0%, 60%);
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .first img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    .first h1 {
+        padding: 0.55rem;
+        font-size: 1.8rem;
+        color: hsl(var(--c), 100%, 70%);
+    }
+
+    footer .form-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #name,
+    #email {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1000px) {
+    :root {
+        --c: 200deg;
+    }
+
+    header {
+        height: 400px;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "a b c";
+
+    }
+
+    .first img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    .first h1 {
+        padding: 0.55rem;
+        font-size: 1.8rem;
+        color: hsl(var(--c), 100%, 70%);
+    }
+
+    .first {
+        margin-top: 0.5rem;
+    }
+
+    .second {
+        margin-top: 0.5rem;
+        margin-right: 0;
+    }
+
+    .third {
+        margin-top: 0.5rem;
+        margin-left: 0;
+    }
+
+    footer {
+        padding: 4rem 2rem;
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+    }
+
+    .subnav {
+        margin-top: 0rem;
+    }
+}
